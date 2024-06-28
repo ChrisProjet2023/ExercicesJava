@@ -11,11 +11,30 @@ Astuce: utilisez str.charAt(i) pour récupérer le caractère à la position i.
  * */
 
 public class Palindrome {
+	
+	public static boolean isPalindrome(String str) {
+		
+		int i=0;
+		int k=str.length()-1;
+		
+		while(k>i) {
+			if(str.charAt(k)!=str.charAt(i)) {
+				return false;			
+			}
+			i++;
+			k--;	
+		}
+		return true;
+	}
 
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Entrez un mot: ");
+		
+		String  str = sc.next();
+		
+		System.out.println(isPalindrome(str));
 		
 
 	}
